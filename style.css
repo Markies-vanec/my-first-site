@@ -24,3 +24,29 @@ a {
 img {
     border-radius: 12px;
 }
+
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.intro img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+}
