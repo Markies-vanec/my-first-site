@@ -1,4 +1,6 @@
 const button = document.getElementById("greet");
 const message = document.getElementById("message");
+let count = 0;
 button.addEventListener("click", function () {
-message.textContent = "Hello! Thanks for visiting my site.";});
+count++;  
+message.textContent = "You clicked " + count + " times.";});

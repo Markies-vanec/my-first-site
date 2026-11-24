@@ -50,3 +50,15 @@ nav {
         text-align: center;
     }
 }
+button{
+    background-color: #0e7c86;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0b636b;
+}
