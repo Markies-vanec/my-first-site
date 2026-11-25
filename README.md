@@ -1,6 +1,6 @@
 # my-first-site
 A personal website I bulid while learning web development.
-**Live site:** https://markies--vanec.github.io/my-first-site/
+**Live site:** https://markies-vanec.github.io/my-first-site/
 ## What it includes 
 - A responsive layout that works on phone (HTML, CSS,flexbox)
 - A click counter with a resert button
