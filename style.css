@@ -62,3 +62,8 @@ button{
 button:hover {
     background-color: #0b636b;
 }
+li button {
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
