@@ -13,22 +13,35 @@ resetButton.addEventListener("click", function () {
 const taskInput = document.getElementById("taskInput");
 const addButton = document.getElementById("addTask");
 const tasklist = document.getElementById("taskList");
-function addTask() {
-    const text = taskInput.value.trim();
-    if (text === "") {
-        return;
-    }
-    const item = document.createElement("li");
-    item.textContent = text + " ";
-
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.addEventListener("click", function () {
-        item.remove();
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+function renderTasks(){
+    tasklist.innerHTML = "";
+    tasks.forEach(function (text, index){
+        const item = document.createElement("li");
+        item.textContent = text + " ";
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", function () {
+            tasks.splice(index, 1);
+            saveTasks();
+            renderTasks();
+        });
+        item.appendChild(removeButton);
+        tasklist.appendChild(item);
     });
-
-    item.appendChild(removeButton);
-    tasklist.appendChild(item);
-    taskInput.value = "";
+    }
+    function addTask(){
+        const text = taskInput.value.trim();
+        if (text === "") {
+            return;
+        }
+        tasks.push(text);
+        saveTasks();
+        renderTasks();
+        taskInput.value = " ";
 }
 addButton.addEventListener("click", addTask);
+renderTasks();
