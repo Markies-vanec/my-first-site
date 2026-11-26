@@ -26,3 +26,8 @@ async function getWeather() {
     }
 }
 weatherButton.addEventListener("click", getWeather);
+cityInput.addEventListener("keydown" , function (event) {
+    if (event.key === "Enter") {
+        getWeather();
+    }
+});
